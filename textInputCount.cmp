@@ -1,0 +1,34 @@
+<aura:component controller="textInputCountController"
+                access="GLOBAL" 
+                extensible="false" 
+                implements="flexipage:availableForAllPageTypes,force:appHostable,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+
+    <aura:attribute name="showInputValue" type="String"/>
+    <aura:attribute name="result" Type="String"/>
+    <aura:attribute name="showBool" type="Boolean" default="false"/>
+    <aura:attribute name="showError" type="Boolean" default="false"/>
+    <aura:attribute name="mapToIterate" type="List"/>
+    <aura:attribute name="errorMessage" type="String"/>
+
+    <div class="row slds-box slds-theme_default">
+
+        <h2 class="header"><b>Words Count</b></h2>
+        <lightning:input name="inputValue" aura:id="inputValue" placeholder="Type few words separated by comma" />
+        <lightning:button variant="brand" class="slds-m-top_x-small" label="Count words" title="Count words" onclick="{!c.handleClick}" />
+
+        <aura:if isTrue="{!v.showBool}">
+            <br/><br/>
+            Provided value:<br/> <b>{!v.showInputValue}</b> <br/><br/>
+            Result: <br/>
+            <aura:iteration items="{!v.mapToIterate}" var="item" indexVar="key">
+               Value: <b>{!item.key}</b>  - Number of occurences: <b>{!item.value}</b><br/>
+            </aura:iteration>
+         </aura:if>
+
+         <aura:if isTrue="{!v.showError}">
+            {!v.errorMessage}
+         </aura:if>
+
+    </div>
+    
+</aura:component>	
