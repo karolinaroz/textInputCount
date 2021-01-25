@@ -2,7 +2,7 @@
 private with sharing class textInputCountControllerTest {
     
     @isTest
-    private static void testSampleMethod() { 
+    private static void countValuesFromStringTest() { 
 
         String sampleInput = 'test,xxx ,test, hello';
         Map<String,Integer> testResult = textInputCountController.countValuesFromString(sampleInput);
