@@ -4,7 +4,6 @@
                 implements="flexipage:availableForAllPageTypes,force:appHostable,force:lightningQuickActionWithoutHeader,force:hasRecordId">
 
     <aura:attribute name="showInputValue" type="String"/>
-    <aura:attribute name="result" Type="String"/>
     <aura:attribute name="showBool" type="Boolean" default="false"/>
     <aura:attribute name="showError" type="Boolean" default="false"/>
     <aura:attribute name="mapToIterate" type="List"/>
